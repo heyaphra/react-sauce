@@ -1,0 +1,10 @@
+# Exactly the same as docker-compose.dev.yml - modify it to suit the needs of your production environment.
+version: "3.9"
+services:
+  ui:
+    build: ./ui
+    ports:
+      - "3000:3000"
+    command: yarn dev --host
+    environment:
+      - NODE_ENV=DEVELOPMENT
