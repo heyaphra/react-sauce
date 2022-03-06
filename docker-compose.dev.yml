@@ -5,5 +5,18 @@ services:
     ports:
       - "3000:3000"
     command: yarn dev --host
+    volumes:
+      - ./ui/src:/usr/src/app/src
     environment:
-      - NODE_ENV=DEVELOPMENT
+      - NODE_ENV=development
+      - DOCKERIZED_ENV=true
+      - VITE_IN_DOCKER=true
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    command: yarn dev
+    volumes:
+      - ./api/src:/usr/src/app/src
+    environment:
+      - NODE_ENV=development

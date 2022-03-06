@@ -6,6 +6,6 @@ COPY . .
 
 RUN yarn
 
-EXPOSE 3000
+EXPOSE 8080
 
-CMD yarn build && yarn prod
+CMD [ "yarn", "prod" ]

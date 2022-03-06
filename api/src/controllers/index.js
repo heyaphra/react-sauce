@@ -1,0 +1,1 @@
+exports.healthcheck = require("./healthcheck");

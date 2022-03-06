@@ -6,6 +6,11 @@ class Provider extends Component {
     passedDownFromProvider: "ฅ^•ﻌ•^ฅ",
   };
 
+  async componentDidMount() {
+    const res = await fetch(`/api/v1/status`);
+    this.setState({ apiStatus: `${res.status} ${res.statusText}` });
+  }
+
   render() {
     return (
       <Context.Provider value={this.state}>

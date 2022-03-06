@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "setup": "yarn && node internals/scripts/setup",
-    "dev": "node internals/scripts/dev-ui",
+    "dev": "concurrently \"yarn dev:ui\" \"yarn dev:api\"",
+    "dev:ui": "node internals/scripts/dev-ui",
+    "dev:api": "node internals/scripts/dev-api",
     "build:ui": "node ./internals/scripts/build-ui",
-    "compose:dev": "docker-compose -f ./docker-compose.dev.yml up --build",
-    "compose:prod": "docker-compose up --build"
+    "dev:compose": "docker-compose -f ./docker-compose.dev.yml up --build",
+    "prod:compose": "docker-compose up --build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/heyaphra/react-sauce/issues"
   },
-  "homepage": "https://github.com/heyaphra/react-sauce#readme"
+  "homepage": "https://github.com/heyaphra/react-sauce#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
 }
