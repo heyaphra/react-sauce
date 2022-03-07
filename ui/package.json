@@ -2,6 +2,7 @@
   "name": "ui",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,6 +10,8 @@
     "prod": "serve -s dist"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.0.0",
+    "@mdx-js/rollup": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "6",

@@ -2,7 +2,7 @@ import "./HeyAphra.css";
 
 function HeyAphra(props) {
   const { passedDownFromProvider } = props;
-  return <p>Hey Aphra! {passedDownFromProvider}</p>;
+  return <div>{passedDownFromProvider}</div>;
 }
 
 export { HeyAphra };
