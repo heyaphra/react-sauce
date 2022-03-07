@@ -10,7 +10,8 @@
     "dev:api": "node internals/scripts/dev-api",
     "build:ui": "node ./internals/scripts/build-ui",
     "dev:compose": "docker-compose -f ./docker-compose.dev.yml up --build",
-    "prod:compose": "docker-compose up --build"
+    "prod:compose": "docker-compose up --build",
+    "clean": "rm -rf ./node_modules ./yarn.lock ./ui/node_modules ./ui/yarn.lock ./api/node_modules ./api/yarn.lock"
   },
   "repository": {
     "type": "git",
