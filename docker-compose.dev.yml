@@ -10,7 +10,6 @@ services:
     environment:
       - NODE_ENV=development
       - DOCKERIZED_ENV=true
-      - VITE_IN_DOCKER=true
   api:
     build: ./api
     ports:
