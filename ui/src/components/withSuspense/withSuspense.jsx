@@ -1,12 +1,9 @@
 import { Suspense } from "react";
 
-export function withSuspense({
-  Component,
-  Fallback = () => <div>Loading...</div>,
-}) {
+export function withSuspense({ Component, Fallback }) {
   const ComponentWithSuspense = (props) => {
     return (
-      <Suspense fallback={<Fallback />}>
+      <Suspense fallback={<Fallback {...props} />}>
         <Component {...props} />
       </Suspense>
     );
