@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import { connect } from "../context";
-import { SineWaveSpinner } from "../components";
+import { SineWaveSpinner, SidebarMenu } from "../components";
 
 export const Router = connect((props) => {
   return (
@@ -20,7 +20,6 @@ export const Router = connect((props) => {
                     style={{
                       width: "50px",
                       height: "50px",
-                      // border: "1px solid"
                     }}
                     loadingTextTop={props.loadingTextTop}
                     loadingTextBottom={props.loadingTextBottom}
@@ -29,10 +28,16 @@ export const Router = connect((props) => {
 
                 <div>aphra.link</div>
               </div>
-              <nav className="site-navigation">
-              </nav>
+              <nav className="site-navigation"></nav>
             </div>
-            <div className="header-right">☰</div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+               <SidebarMenu />
+            </div>
           </div>
         </div>
       </div>
